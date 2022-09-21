@@ -30,7 +30,7 @@
           <div class="btn col-3 shadow-sm p-5 fs-3" onclick="ac()">
             <span>AC</span>
           </div>
-          <div class="btn col-3 shadow-sm p-5 fs-3">
+          <div class="btn col-3 shadow-sm p-5 fs-3" onclick="percent()">
             <span>%</span>
           </div>
           <div class="btn col-3 shadow-sm p-5 fs-3" onclick="add('/')">
@@ -87,7 +87,7 @@
           <div class="btn col-3 shadow-sm p-5 fs-3" onclick="add(1)">
             <span>1</span>
           </div>
-          <div class="btn btn-warning col-3 shadow-sm p-5 fs-3">
+          <div class="btn btn-warning col-3 shadow-sm p-5 fs-3" onclick="del()">
             <span>Del</span>
           </div>
         </div>
@@ -127,6 +127,17 @@
       let ac = () => {
         num = "";
         view.innerHTML = 0;
+      }
+
+      let percent = () => {
+        percentage = num/100;
+        num = "percentage";
+        view.innerHTML = percentage;
+      }
+
+      let del = () => {
+        (num.length==1) ? num = 0 : num = num.slice(0, -1);
+        view.innerHTML = num;
       }
     </script>
   </body>
